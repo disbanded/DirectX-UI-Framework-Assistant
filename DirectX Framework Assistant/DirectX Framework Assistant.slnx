@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="DirectX Framework Assistant.vcxproj" Id="7c2c0eac-4377-4c0f-a125-6d8faa369cde" />
+</Solution>
