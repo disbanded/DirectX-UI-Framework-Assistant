@@ -1,13 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="source\main.cpp" />
-    <ClCompile Include="source\ui\ui.cpp" />
-    <ClCompile Include="source\renderer\renderer.cpp" />
+    <ClCompile Include="source\main.cpp">
+      <Filter>source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\renderer\renderer.cpp">
+      <Filter>source\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ui\ui.cpp">
+      <Filter>source\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ui\draw\draw_list.cpp">
+      <Filter>source\ui\draw</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ui\widgets\button\button.cpp" />
+    <ClCompile Include="source\ui\widgets\checkbox\checkbox.cpp" />
+    <ClCompile Include="source\ui\widgets\slider\slider.cpp" />
+    <ClCompile Include="source\ui\widgets\panel\panel.cpp" />
+    <ClCompile Include="source\renderer\text_renderer.cpp" />
+    <ClCompile Include="source\assistant\assistant.cpp" />
+    <ClCompile Include="source\utility\json.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\ui\ui.h" />
-    <ClInclude Include="source\renderer\renderer.h" />
-    <ClInclude Include="source\includes.h" />
+    <ClInclude Include="source\renderer\renderer.h">
+      <Filter>source\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ui\ui.h">
+      <Filter>source\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\includes.h">
+      <Filter>assets</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ui\draw\draw_list.h">
+      <Filter>source\ui\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="source\utility\util.h">
+      <Filter>source\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ui\widgets\button\button.h" />
+    <ClInclude Include="source\ui\widgets\checkbox\checkbox.h" />
+    <ClInclude Include="source\ui\widgets\slider\slider.h" />
+    <ClInclude Include="source\ui\widgets\panel\panel.h" />
+    <ClInclude Include="source\renderer\text_renderer.h" />
+    <ClInclude Include="source\colour.h" />
+    <ClInclude Include="source\assistant\assistant.h" />
+    <ClInclude Include="source\utility\json.h" />
+    <ClInclude Include="source\utility\tests.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="assets">
+      <UniqueIdentifier>{61170b85-cdca-48b4-97a8-a662981394cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{99e5e003-273c-44d5-b2d8-d4e9929ddd1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\renderer">
+      <UniqueIdentifier>{6e0ea905-dbb7-44c2-9328-a57d16cb9b50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\ui">
+      <UniqueIdentifier>{65024a1b-5f26-40bc-a1c4-2858868638fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\documentation">
+      <UniqueIdentifier>{48a9e759-e557-4103-8f5f-519ba7b704f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\core">
+      <UniqueIdentifier>{3115aa26-ae0e-4450-bddf-5f0dc74665b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\ui\draw">
+      <UniqueIdentifier>{0ffe8eee-86af-4e43-90e2-c9d305b06ed8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\ui\widgets">
+      <UniqueIdentifier>{f60f61ec-ce59-43dd-98cf-fcaefa2b2107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\utilities">
+      <UniqueIdentifier>{75c651a8-e680-4bd5-a15a-47ed74335fb0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md">
+      <Filter>assets\documentation</Filter>
+    </None>
+    <None Include="docs\sprints.md">
+      <Filter>assets\documentation</Filter>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

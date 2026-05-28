@@ -70,6 +70,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -109,6 +117,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib
+dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -124,19 +134,52 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib
+dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\utility\json.cpp" />
+    <ClCompile Include="source\assistant\assistant.cpp" />
+    <ClCompile Include="source\renderer\text_renderer.cpp" />
+    <ClCompile Include="source\ui\widgets\panel\panel.cpp" />
+    <ClCompile Include="source\ui\widgets\slider\slider.cpp" />
+    <ClCompile Include="source\ui\draw\draw_list.cpp" />
     <ClCompile Include="source\renderer\renderer.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\ui\ui.cpp" />
+    <ClCompile Include="source\ui\widgets\button\button.cpp" />
+    <ClCompile Include="source\ui\widgets\checkbox\checkbox.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\utility\json.h" />
+    <ClInclude Include="source\assistant\assistant.h" />
+    <ClInclude Include="source\colour.h" />
+    <ClInclude Include="source\renderer\text_renderer.h" />
+    <ClInclude Include="source\ui\widgets\panel\panel.h" />
+    <ClInclude Include="source\ui\widgets\slider\slider.h" />
+    <ClInclude Include="source\ui\draw\draw_list.h" />
     <ClInclude Include="source\includes.h" />
     <ClInclude Include="source\renderer\renderer.h" />
     <ClInclude Include="source\ui\ui.h" />
+    <ClInclude Include="source\ui\widgets\button\button.h" />
+    <ClInclude Include="source\ui\widgets\checkbox\checkbox.h" />
+    <ClInclude Include="source\utility\tests.h" />
+    <ClInclude Include="source\utility\util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="docs\sprints.md" />
+    <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\nlohmann.json.3.12.0\build\native\nlohmann.json.targets" Condition="Exists('packages\nlohmann.json.3.12.0\build\native\nlohmann.json.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\nlohmann.json.3.12.0\build\native\nlohmann.json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nlohmann.json.3.12.0\build\native\nlohmann.json.targets'))" />
+  </Target>
 </Project>

@@ -2,5 +2,4 @@
 
 #include <windows.h>
 #include <d3d11.h>
-#include <chrono>
-#include <thread>
+#include <cstdio>

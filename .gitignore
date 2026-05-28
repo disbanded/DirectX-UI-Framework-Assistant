@@ -12,10 +12,7 @@ build/
 out/
 bin/
 obj/
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
+
 *.obj
 *.o
 *.exe
@@ -33,3 +30,7 @@ Thumbs.db
 screenshots/*
 !screenshots/.gitkeep
 assets/temp/
+
+DirectX .7c2c0eac/
+Thumbs.db
+Desktop.ini

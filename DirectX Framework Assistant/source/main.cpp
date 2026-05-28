@@ -1,15 +1,13 @@
 #include "ui/ui.h"
+#include "utility/tests.h"
 
 int main() {
-	printf("[+] hello world\n");
+    printf("[+] debug | ui\n--------------\n");
 
-	while (true) {
+	unit_test::run_tests(); // Runs unit tests, before real application launch
 
-		if (GetAsyncKeyState(VK_DELETE) && 0x1) // kill switch
-			break;
+    auto config = assistant::generate_layout(); // Generate layout config thru UI Assistant
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	}
-
-	return EXIT_SUCCESS;
+    ui::user_interface ui; // creates and init instance
+    return ui.init(config);
 }
