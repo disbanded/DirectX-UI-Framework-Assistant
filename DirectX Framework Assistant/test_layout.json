@@ -1,9 +1,0 @@
-{
-    "button_amount": 2,
-    "button_labels": [
-        "hello",
-        "world"
-    ],
-    "has_checkbox": true,
-    "slider_amount": 1
-}
